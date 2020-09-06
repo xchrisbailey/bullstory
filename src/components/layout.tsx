@@ -21,26 +21,28 @@ export const Layout: FC<Props> = ({ children }) => {
 }
 
 const Navbar = styled.section`
+  background: ${(props) => props.theme.darkGrey};
+  height: 6em;
+  margin: 0 0 1em 0;
   width: 100%;
-  background: #222;
-  height: 3rem;
 `
 
 const HeaderContainer = styled(Container)`
-  height: 100%;
-  display: flex;
-  justify-content: left;
-  align-items: center;
   align-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: left;
 `
 
 const Brand = styled.p`
-  font-size: 1.5rem;
-  padding: 0;
-  margin: 0;
-  line-height: 2rem;
-  letter-spacing: 0.1em;
-  color: #ccc;
-  text-transform: uppercase;
+  color: ${(props) => props.theme.primary};
   font-family: 'Merriweather', serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  line-height: 2rem;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
 `
