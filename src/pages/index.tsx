@@ -1,5 +1,7 @@
+import { Layout } from '../components/layout'
+
 export const Home = (): JSX.Element => (
-  <div>
+  <Layout>
     <h1>hello</h1>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem repellat
@@ -16,7 +18,7 @@ export const Home = (): JSX.Element => (
       sequi eius alias facilis nulla, necessitatibus aspernatur atque obcaecati
       perferendis molestias soluta numquam.
     </p>
-  </div>
+  </Layout>
 )
 
 export default Home
