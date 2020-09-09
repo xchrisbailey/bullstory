@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-html {font-size: 112.5%;} /*18px*/
+html {font-size: 18px;}
 
 body {
   background-color: ${(props) => props.theme.bg};

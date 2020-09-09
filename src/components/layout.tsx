@@ -13,6 +13,7 @@ export const Layout: FC<Props> = ({ children }) => {
       <Navbar>
         <HeaderContainer>
           <Brand>BullStory</Brand>
+          <SearchBar placeholder="ticker" />
         </HeaderContainer>
       </Navbar>
       <Container>{children}</Container>
@@ -28,21 +29,33 @@ const Navbar = styled.section`
 `
 
 const HeaderContainer = styled(Container)`
-  align-content: center;
-  align-items: center;
   display: flex;
+  align-items: center;
   height: 100%;
-  justify-content: left;
+  justify-content: space-between;
 `
 
 const Brand = styled.p`
-  color: ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.yellow};
   font-family: 'Merriweather', serif;
   font-size: 1.5rem;
   font-weight: bold;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   line-height: 2rem;
   margin: 0;
   padding: 0;
   text-transform: uppercase;
+  flex-grow: 2;
+`
+
+const SearchBar = styled.input`
+  outline: none;
+  border: none;
+  min-width: 35%;
+  height: 1.5em;
+  font-size: 1em;
+  border-radius: 1em;
+  padding: 0.25em 1em;
+  background: ${(props) => props.theme.bg};
+  color: ${(props) => props.theme.fg};
 `
