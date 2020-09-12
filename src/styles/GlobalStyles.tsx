@@ -1,40 +1,66 @@
 import { createGlobalStyle } from 'styled-components'
+import reset from 'styled-reset'
 
-const GlobalStyle = createGlobalStyle`
-html {font-size: 112.5%;} /*18px*/
+const GlobalStyles = createGlobalStyle`
+  ${reset}
+  html {
+    font-size: 112.5%;
+  } /*18px*/
 
-body {
-  background-color: ${(props) => props.theme.bg};
-  font-family: 'Noto Sans', sans-serif;
-  font-weight: 400;
-  line-height: 1.65;
-  color: ${(props) => props.theme.fg};
-}
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
 
-p {margin-bottom: 1.15rem;}
+  body {
+    background-color: ${(props) => props.theme.bg};
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    color: ${(props) => props.theme.fg};
+  }
 
-h1, h2, h3, h4, h5 {
-  margin: 2.75rem 0 1.05rem;
-  font-family: 'Merriweather', serif;
-  font-weight: 400;
-  line-height: 1.15;
-}
+  p {
+    margin-bottom: 1.15rem;
+  }
 
-h1 {
-  margin-top: 0;
-  font-size: 4.209em;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 2.75rem 0 1.05rem;
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    line-height: 1.15;
+  }
 
-h2 {font-size: 3.157em;}
+  h1 {
+    margin-top: 0;
+    font-size: 4.209em;
+  }
 
-h3 {font-size: 2.369em;}
+  h2 {
+    font-size: 3.157em;
+  }
 
-h4 {font-size: 1.777em;}
+  h3 {
+    font-size: 2.369em;
+  }
 
-h5 {font-size: 1.333em;}
+  h4 {
+    font-size: 1.777em;
+  }
 
-small, .text_small {font-size: 0.75em;}
+  h5 {
+    font-size: 1.333em;
+  }
 
+  small,
+  .text_small {
+    font-size: 0.75em;
+  }
 `
 
-export default GlobalStyle
+export default GlobalStyles

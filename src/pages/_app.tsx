@@ -4,13 +4,11 @@ import GlobalStyles from '../styles/GlobalStyles'
 import { theme } from '../styles/theme'
 import { ThemeProvider } from 'styled-components'
 import { ReactElement } from 'react'
-import { Reset } from 'styled-reset'
 
 export default function App({ Component, pageProps }): ReactElement {
   return (
     <ThemeProvider theme={theme}>
       <GoogleFonts href="https://fonts.googleapis.com/css2?family=Merriweather&family=Noto+Sans&display=swap" />
-      <Reset />
       <GlobalStyles />
       <Component {...pageProps} />
     </ThemeProvider>
