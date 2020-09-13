@@ -30,6 +30,7 @@
     "*.{js,ts,tsx}": "prettier --write"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "next": "latest",
     "next-google-fonts": "^1.2.1",
     "react": "^16.13.1",

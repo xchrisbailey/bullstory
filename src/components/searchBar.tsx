@@ -1,8 +1,26 @@
-import React, { FC } from 'react'
+import { useRouter } from 'next/router'
+import React, { FC, useState } from 'react'
 import styled from 'styled-components'
 
 const SearchBar: FC = () => {
-  return <SearchInput placeholder="ticker" />
+  const router = useRouter()
+  const [searchText, setSearchText] = useState('')
+  const submitSearch = (e: any) => {
+    e.preventDefault()
+    router.push({
+      pathname: `/stock`,
+      query: { ticker: searchText },
+    })
+  }
+
+  return (
+    <form onSubmit={submitSearch}>
+      <SearchInput
+        placeholder="ticker"
+        onChange={(e) => setSearchText(e.target.value)}
+      />
+    </form>
+  )
 }
 
 export default SearchBar
