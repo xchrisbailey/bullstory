@@ -1,5 +1,9 @@
 import { GetServerSideProps } from 'next'
 import React, { FC } from 'react'
+import dynamic from 'next/dynamic'
+
+const Chart = dynamic(() => import('../components/chart'), { ssr: false })
+
 import { Layout } from '../components/layout'
 
 interface Props {
@@ -10,10 +14,13 @@ interface Props {
   info: any
 }
 
-const stock: FC<Props> = ({ info }) => {
+const stock: FC<Props> = ({ data, info }) => {
+  const d = data.data
+
   return (
     <Layout>
       <h1>{info.name}</h1>
+      <Chart data={d} />
     </Layout>
   )
 }
