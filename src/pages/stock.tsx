@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 const Chart = dynamic(() => import('../components/chart'), { ssr: false })
 
 import { Layout } from '../components/layout'
+import styled from 'styled-components'
 
 interface Props {
   data: {
@@ -14,12 +15,12 @@ interface Props {
   info: any
 }
 
-const stock: FC<Props> = ({ data, info }) => {
+const Stock: FC<Props> = ({ data, info }) => {
   const d = data.data
 
   return (
     <Layout>
-      <h1>{info.name}</h1>
+      <CompanyTitle>{info.name}</CompanyTitle>
       <Chart data={d} />
     </Layout>
   )
@@ -42,4 +43,9 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   }
 }
 
-export default stock
+export default Stock
+
+const CompanyTitle = styled.h1`
+  font-size: 1.7rem;
+  font-weight: bold;
+`
