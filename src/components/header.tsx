@@ -2,12 +2,15 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Container } from '../styles/Container'
 import SearchBar from './searchBar'
+import Link from 'next/link'
 
 const Header: FC = () => {
   return (
     <Navbar>
       <HeaderContainer>
-        <Brand>BullStory</Brand>
+        <Link href="/">
+          <Brand>BullStory</Brand>
+        </Link>
         <SearchBar />
       </HeaderContainer>
     </Navbar>
@@ -30,7 +33,7 @@ const HeaderContainer = styled(Container)`
   justify-content: space-between;
 `
 
-const Brand = styled.p`
+const Brand = styled.a`
   color: ${(props) => props.theme.yellow};
   font-family: 'Merriweather', serif;
   font-size: 1.5rem;
@@ -41,4 +44,5 @@ const Brand = styled.p`
   padding: 0;
   text-transform: uppercase;
   flex-grow: 2;
+  cursor: pointer;
 `

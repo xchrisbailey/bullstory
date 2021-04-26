@@ -1,4 +1,4 @@
-import GoogleFonts from 'next-google-fonts'
+import { GoogleFonts } from 'next-google-fonts'
 
 import GlobalStyles from '../styles/GlobalStyles'
 import { theme } from '../styles/theme'
